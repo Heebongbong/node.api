@@ -6,20 +6,20 @@ const session = require("express-session");
 const nunjucks = require("nunjucks")
 const dotenv = require("dotenv");
 const passport = require("passport")
+const passportConfig = require('./src/config/passport')
 
 dotenv.config();
+passportConfig();
 
 const homeCtrl = require("./src/web/home/homeCtrl");
-const { sequelize } = require("./src/models/config");
-const passportConfig = require('./src/config/passport')
+const { sequelize } = require("./src/config/models");
 
 const app = express();
 
-passportConfig();
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT);
 app.set('view engine', 'html')
 
-nunjucks.configure('html', {
+nunjucks.configure('resource/html', {
     express: app,
     watch: true,
 });

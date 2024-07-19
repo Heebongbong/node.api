@@ -1,12 +1,8 @@
 const express = require('express')
 const { isLoggedIn, isNotLoggedIn } = require('../../middle/logInCheck')
-const { renderLogin } = require('./homeSvc')
-const domainCtrl = require('../domain/domainCtrl')
+const { createDomain } = require('./domainSvc')
 const router = express.Router();
 
-
-router.use('/domain', domainCtrl)
-
-router.get('/', renderLogin);
+router.get('/', isLoggedIn, createDomain);
 
 module.exports = router;
