@@ -9,7 +9,7 @@ exports.renderLogin = async (req, res, next) => {
         })
         res.render('index', {
             user,
-            domains: user?.domains,
+            domains: user?.Domains,
         })
     } catch (e) {
         console.error(e);

@@ -1,5 +1,5 @@
 const Domain = require('../../models/domain');
-const { v4: uuid } = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 
 exports.createDomain = async (req, res, next) => {
     try {
@@ -7,7 +7,7 @@ exports.createDomain = async (req, res, next) => {
             UserId: req.user.id,
             host: req.body.host,
             type: req.body.type,
-            clientSecret: uuid(),
+            clientSecret: uuidv4(),
         })
         res.redirect('/')
     } catch (e) {
