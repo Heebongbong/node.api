@@ -12,7 +12,6 @@ router.use('/user', userCtrl)
 router.use('/auth', authCtrl)
 router.use('/v1', v1Ctrl)
 
-
 router.get('/', renderLogin);
 
 module.exports = router;
