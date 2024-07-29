@@ -1,23 +1,23 @@
 {
     "development": {
         "username": "root",
-            "password": "1234",
-            "database": "nodejs",
-            "host": "127.0.0.1",
-            "dialect": "mariadb"
+        "password": "1234",
+        "database": "nodejs",
+        "host": "127.0.0.1",
+        "dialect": "mariadb"
     },
-        "test": {
+    "test": {
         "username": "root",
-            "password": null,
-            "database": "database_test",
-            "host": "127.0.0.1",
-            "dialect": "mysql"
+        "password": "1234",
+        "database": "nodejs_test",
+        "host": "127.0.0.1",
+        "dialect": "mariadb"
     },
-        "production": {
+    "production": {
         "username": "root",
-            "password": null,
-            "database": "database_production",
-            "host": "127.0.0.1",
-            "dialect": "mysql"
+        "password": null,
+        "database": "database_production",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
     }
 }

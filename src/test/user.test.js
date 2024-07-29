@@ -1,3 +1,10 @@
+const Sequelize = require('sequelize')
+const config = require("../main/config/db.json")["development"]
+
+const sequelize = new Sequelize(
+    config.database, config.username, config.password, config,
+);
+
 const { follow } = require("../main/web/user/userSvc");
 jest.mock("../main/models/user")
 const User = require("../main/models/user");
@@ -37,5 +44,11 @@ describe("user test", function() {
         await follow(req, res, next);
 
         expect(next).toBeCalledWith('DB 에러')
+    })
+})
+
+describe("User 모델", ()=>{
+    test("static initiate 메서드 호출", ()=>{
+        expect(User.initiate(sequelize)).toBe(undefined)
     })
 })

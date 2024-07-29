@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "coverage": "jest --coverage"
   },
   "author": "Lee",
   "license": "MIT",
@@ -34,6 +35,8 @@
   },
   "devDependencies": {
     "jest": "^29.7.0",
-    "nodemon": "^3.1.4"
+    "mysql2": "^3.11.0",
+    "nodemon": "^3.1.4",
+    "supertest": "^7.0.0"
   }
 }
